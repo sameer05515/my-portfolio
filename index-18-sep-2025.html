@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ mobileMenuOpen: false }">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Premendra Kumar - Portfolio</title>
+    <meta content="Portfolio of Premendra Kumar - Team Lead & FullStack Developer" name="description">
+    <meta content="portfolio, resume, developer, java, spring boot, reactjs" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Raleway', sans-serif;
+        }
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+        }
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    
+    <!-- Mobile Menu Toggle -->
+    <button @click="mobileMenuOpen = !mobileMenuOpen" 
+            class="lg:hidden fixed top-4 right-4 z-50 p-2 bg-blue-600 text-white rounded-lg shadow-lg">
+        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div x-show="mobileMenuOpen" 
+         x-transition
+         @click.away="mobileMenuOpen = false"
+         class="lg:hidden fixed inset-0 z-40 bg-white">
+        <nav class="pt-20 px-6">
+            <a href="#about" @click="mobileMenuOpen = false" 
+               class="block py-3 px-4 mb-2 rounded-lg hover:bg-blue-50 text-gray-700">
+                About
+            </a>
+            <a href="#skills" @click="mobileMenuOpen = false" 
+               class="block py-3 px-4 mb-2 rounded-lg hover:bg-blue-50 text-gray-700">
+                Skills
+            </a>
+            <a href="#resume" @click="mobileMenuOpen = false" 
+               class="block py-3 px-4 mb-2 rounded-lg hover:bg-blue-50 text-gray-700">
+                Resume
+            </a>
+        </nav>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 lg:py-12">
+        
+        <!-- About Section -->
+        <section id="about" class="mb-16 scroll-mt-20">
+            <div class="bg-white rounded-lg shadow-md p-6 lg:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 section-title">About</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+                    <p class="text-left text-gray-700 leading-relaxed">
+                        Seeking a position to utilize my skills and abilities with approx. 
+                        <strong class="underline">14 years 3 months of experience</strong> 
+                        (approx. 14.3 years of backend development and 5 years of frontend development with ReactJS) 
+                        in the Information Technology Industry that offers professional growth while being resourceful, 
+                        innovative and flexible. I want to work with a professional organization where I will be able to 
+                        develop my skills along with some challenging projects to handle with latest technology.
+                    </p>
+                    <ul class="text-left text-gray-700 mt-4 space-y-2 list-disc list-inside">
+                        <li>Worked as Team Lead for 5 years and successfully delivered new functionality for 
+                            implementation of NSDL/CDSL Edis 3rd party Restful web services in shubhweb application.</li>
+                        <li>Worked in more than 20+ projects having different technology stacks.</li>
+                        <li>Worked for development of API to migrate data from legacy database to target database using 
+                            Java concurrent API in minimum time</li>
+                        <li>Good exposure of cloud services with AWS</li>
+                        <li>6+ years Hands-on experience to develop solutions with microservices</li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <div class="lg:col-span-4 hidden lg:block">
+                        <img src="assets/img/profile-img.jpg" alt="Premendra Kumar" 
+                             class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                    <div class="lg:col-span-8">
+                        <h3 class="text-2xl font-bold text-gray-700 mb-4">
+                            Team Lead & FullStack Developer & Backend Web Developer
+                        </h3>
+                        <p class="text-gray-600 italic mb-6">
+                            In spite of mainly worked in backend development with various Java/JEE frameworks, I have 
+                            good exposure to latest Frontend technologies (e.g. ReactJS, AngularJS, AdobeFlex, Bootstrap, HTML5, CSS3).
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span><strong>Birthday:</strong> <span class="text-gray-600">31 May 1986</span></span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span><strong>Email:</strong> <span class="text-gray-600">premendra.bce05515@gmail.com</span></span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span><strong>Phone:</strong> <span class="text-gray-600">+91-8010645624</span></span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span><strong>City:</strong> <span class="text-gray-600">Faridabad, Haryana, India</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span><strong>Degree:</strong> <span class="text-gray-600">B. Tech(CSE)</span></span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span><strong>Expertise:</strong> <span class="text-gray-600">Java/JEE</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-700 leading-relaxed">
+                            During my career, I have worked in various projects with varying technologies and 
+                            successfully implemented new functionalities, which became profitable for organization. <br><br>
+                            During my career journey, I have learnt various ways to create views in latest frontend 
+                            technologies and made communication of these views with backend services mainly created with 
+                            latest Java/JEE technologies. <br><br>
+                            I have good exposure with Java 8, Spring, Spring Boot, Different ORM Frameworks 
+                            (e.g. Hibernate, MyBatis). <br><br>
+                            I have deployed web application in various Servers (e.g. Tomcat, Weblogic, WebSphere) 
+                            hosted in Linux/Windows environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16 scroll-mt-20">
+            <div class="bg-white rounded-lg shadow-md p-6 lg:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 section-title">Skills</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+                    <div class="text-left">
+                        <ul class="text-gray-700 space-y-2 list-disc list-inside">
+                            <li><strong>Java technology known</strong> (Core Java, OOPs concept, Reflection API, Servlets, JSP, 
+                                Struts2, Hibernate, Web Services, Collection API, JDBC, Apache Axis API, Apache Solr API, 
+                                JAX-RS, Spring Boot, Spring Batch, Spring data, Spring Rest)</li>
+                            <li><strong>DBMS Packages</strong> (Oracle 12g, Access, SQL server, PostgreSQL, SQLite, DB2, MySQL)</li>
+                            <li><strong>Operating Systems</strong> (WINDOWS, Linux)</li>
+                            <li><strong>Web Designing</strong> (HTML5, CSS3, AngularJS, Bootstrap, Angular13, React 16.8, GWT)</li>
+                            <li><strong>Web Servers</strong> (WebLogic 8.1, Apache Tomcat, Websphere8)</li>
+                            <li><strong>Addl. technology known</strong> (Angular13, React 16.8, GWT, NodeJS, Adobe Flex 4, 
+                                JavaScript, CSS3, Apache Ant, Maven)</li>
+                            <li><strong>RAD Tool</strong> (Eclipse, Net beans, Adobe Flash Builder 4.1, IntelliJ Idea)</li>
+                            <li><strong>DevOps Tool</strong> (Jira, AWS, Jenkins, BitBucket)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700">Java/JEE</span>
+                                <span class="text-sm text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700">Java 8</span>
+                                <span class="text-sm text-gray-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700">Spring Boot/Microservices</span>
+                                <span class="text-sm text-gray-600">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700">ReactJS and other frontend technologies</span>
+                                <span class="text-sm text-gray-600">50%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: 50%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700">Database with ORM Technologies</span>
+                                <span class="text-sm text-gray-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700">AWS</span>
+                                <span class="text-sm text-gray-600">40%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="mb-16 scroll-mt-20">
+            <div class="bg-white rounded-lg shadow-md p-6 lg:p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 section-title">Resume</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Seeking a position to utilize my skills and abilities with approx. 
+                        <strong class="underline">14 years 3 months of experience</strong> 
+                        (approx. 14.3 years of backend development and 5 years of frontend development) in the Information 
+                        Technology Industry that offers professional growth while being resourceful, innovative and flexible. 
+                        I want to work with a professional organization where I will be able to develop my skills along 
+                        with some challenging projects to handle with latest technology.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Left Column -->
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-blue-600">Summary</h3>
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Premendra Kumar</h4>
+                            <p class="text-gray-600 italic mb-3">
+                                Innovative and deadline-driven FullStack/Backend Developer with 14.3+ years of experience 
+                                designing and developing user-centered backend services and views from initial concept to 
+                                final, polished deliverable.
+                            </p>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>Faridabad, Haryana, India</li>
+                                <li>+91- 80106 45624/ +91- 87500 84750</li>
+                                <li>premendra.bce05515@gmail.com, premendra.bce05515@outlook.com</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-blue-600">Education</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Bachelor of Engineering, Computer Science and Engineering</h4>
+                                <h5 class="text-blue-600 font-medium">2005 - 2009</h5>
+                                <p class="text-gray-600 italic">B. C. E. Bhagalpur, Bihar</p>
+                            </div>
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Intermediate of Science, Mathematics</h4>
+                                <h5 class="text-blue-600 font-medium">2002 - 2004</h5>
+                                <p class="text-gray-600 italic">M. S. College, Motihari, Bihar</p>
+                            </div>
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Matriculation</h4>
+                                <h5 class="text-blue-600 font-medium">2001 - 2002</h5>
+                                <p class="text-gray-600 italic">Gopal Sah Vidyalaya, Motihari, Bihar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-blue-600">Professional Experience</h3>
+                        <div class="space-y-6">
+                            <!-- Senior Staff Engineer -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Senior Staff Engineer</h4>
+                                <h5 class="text-blue-600 font-medium">June 2023 to Feb 2024</h5>
+                                <p class="text-gray-600 italic mb-2">Zycus Infotech Pvt. Ltd., Bangalore, India</p>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Development in "ESG Lythouse" application. Technologies used are Java/J2EE, Spring Boot, Spring GraphQL, MongoDB, ReactJS.</li>
+                                    <li>Added code for new features (Category, EU Taxonomy, Goals, Initiatives, Metrics)</li>
+                                    <li>Worked in Agile methodology to gather requirements from clients and created Epics and created stories for implementation</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Worked with implementation team to live Lythouse application in QA and pre-prod environment for given clients.</li>
+                                    <li>Fixed bugs identified by QA team and shared through Jira</li>
+                                </ul>
+                            </div>
+
+                            <!-- Lead Backend developer -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Lead Backend developer</h4>
+                                <h5 class="text-blue-600 font-medium">Dec 2022 to Feb 2023</h5>
+                                <p class="text-gray-600 italic mb-2">EVC Ventures, Gurgaon, India</p>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Worked to add JavaMelody and ShedLock to monitor and improve performance of application</li>
+                                    <li>Development in "IITD-Admin" and "SPortal" application. Technologies used are Java/J2EE, Spring Boot, Spring REST, MyBatis, Spring MVC, Bootstrap, ReactJS.</li>
+                                    <li>Added code for new requirements (Store and Purchase module)</li>
+                                    <li>Worked in Agile methodology to gather requirements from clients and created Epics and created stories for implementation</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Fixed bugs identified by support team and shared through Jira</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Project Leader -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Project Leader</h4>
+                                <h5 class="text-blue-600 font-medium">Oct 2021 to Dec 2022</h5>
+                                <p class="text-gray-600 italic mb-2">RSystems International Pvt Ltd, Noida, India</p>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Development in "Ephesoft Transact" application. Technologies used are Java/J2EE, Spring Boot, Spring REST, Hibernate, Oracle 12g, GWT, Bootstrap, Angular.</li>
+                                    <li>Added code for new requirements (SRE service integration)</li>
+                                    <li>Served Scrum master responsibility to manage sprints</li>
+                                    <li>Worked in Agile methodology to gather requirements from clients and created Epics and created stories for implementation</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Fixed bugs identified by support team and shared through Jira</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Team Lead -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Team Lead</h4>
+                                <h5 class="text-blue-600 font-medium">Sep 2019 to Oct 2021</h5>
+                                <p class="text-gray-600 italic mb-2">Dhani stocks Limited, <span class="text-xs">(formerly Indiabulls security Ltd, Indiabulls ventures ltd)</span>, Gurgaon, India</p>
+                                <div class="text-sm text-gray-600 mb-2 italic">
+                                    <p>Senior Software Engineer, Sep 2019 to Jan 2021</p>
+                                    <p>Team Lead, Mar 2021 to Oct 2021</p>
+                                </div>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Development in "ShubhWeb" application. Technologies used are Java/J2EE, Spring Boot, Spring Batch, Spring REST, Hibernate, Oracle 12g, ReactJS, Bootstrap.</li>
+                                    <li>Worked for development of helper applications Notis API, KRA, SFTP projects</li>
+                                    <li>Worked as Team Lead and successfully delivered new functionality for implementation of NSDL/CDSL Edis 3rd party Restful web services in shubhweb application.</li>
+                                    <li>Migrated code from SVN to GITLab Server</li>
+                                    <li>Migrated old react class components to new functional components</li>
+                                    <li>Served Scrum master responsibility to manage sprints</li>
+                                    <li>Worked in Agile methodology to gather requirements from clients and created Epics and created stories for implementation</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Fixed bugs identified by support team and shared through Jira</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Assistant Manager -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Assistant Manager, IT Applications</h4>
+                                <h5 class="text-blue-600 font-medium">Jan 2014 to Sep 2019</h5>
+                                <p class="text-gray-600 italic mb-2">Concentrix Daksh Services India Private Limited, Gurgaon, India</p>
+                                <div class="text-sm text-gray-600 mb-2 italic">
+                                    <p>Software Developer (L2/L3), Contractual, Payroll COMPANY: WDC, Jan 2014 to Dec 2014</p>
+                                    <p>Assistant Manager, IT Applications, Jan 2015 to Mar 2017</p>
+                                    <p>Assistant Manager, IT Applications, Nov 2017 to Sep 2019</p>
+                                </div>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Worked in 2014 as L2/L3 support Engineer contractual employee from WDC, deployed in Concentrix India. During this period I worked with software development team of WebDOTS 4.1, QAA using Java, J2EE, Hibernate, JSF, and Struts2. These application runs on IBM WebSphere 8.</li>
+                                    <li>During 2015-17 I worked for development of Zetta application using Java, J2ee, AngularJS, REST, and Hibernate. Also I worked as DevOps engineer to configure Zetta application environments on AWS cloud using Jenkins, JIRA, AWS, BitBucket, Chef scripts.</li>
+                                    <li>Post 6 months gap, I rejoined Concentrix and worked for duration 2017-2019 for development of "Global Incentive Program(GIP)" application. Technologies used are Java/J2EE, Spring Boot, Hibernate, MySQL, AngularJS, Bootstrap.</li>
+                                    <li>Provided L2/L3 level support to WebDOTS 4.1, QAA application.</li>
+                                    <li>Updated and create incident management tickets in the ticket tracking application</li>
+                                    <li>Identified defects within WebDOTS 4.1, QAA application</li>
+                                    <li>Provided support for the successful deployment of multiple iterations of the WebDOTS 4.1, QAA application.</li>
+                                    <li>Provided L2/L3 level support to Zetta application.</li>
+                                    <li>Create, monitor and update defects in Jira</li>
+                                    <li>Installed applications in AWS environment using Jenkins, and AWS Cloudformation</li>
+                                    <li>Provided support for the successful deployment of multiple iterations of the Zetta application</li>
+                                    <li>Provided L2/L3 level support to GainManager and ResolveJiffy application.</li>
+                                    <li>Wrote and executed SQL queries for reporting and research purposes.</li>
+                                    <li>Provided support for the successful deployment of multiple iterations of the GM and RJ application</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release. This resulted increased efficiency in batch processing with no errors or transmissions missed and thus reduced the number of incidents.</li>
+                                    <li>Worked in Agile methodology to gather requirements from clients and created Epics and created stories for implementation</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Fixed bugs identified by support team and shared through Jira</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Application Developer -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Application Developer</h4>
+                                <h5 class="text-blue-600 font-medium">May 2012 to Dec 2013</h5>
+                                <p class="text-gray-600 italic mb-2">Novelvox Software India Pvt Ltd (previously known as Integration Services & Technologies India PVT LTD), Faridabad, India</p>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Development for iAgent web application to develop service generation module and service invocation module using Java, J2ee, JDBC, Apache Solr, Hibernate Flex4, CSS, JavaScript to develop views and backend services</li>
+                                    <li>Developed REST services to upload Pdf documents and used <strong>Apache Solr</strong> to create indexes for all uploaded pdf documents, so that search for given text could be faster</li>
+                                    <li>Worked in Agile methodology to gather requirements from clients and created Epics and created stories for implementation</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Fixed bugs identified by support team and shared through Jira</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Software Developer - HCL -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Software Developer</h4>
+                                <h5 class="text-blue-600 font-medium">March 2011 to May 2012</h5>
+                                <p class="text-gray-600 italic mb-2">HCL Infosystems Ltd, Noida, India</p>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Worked as contractual employee from HCL Infosystems LTD, deployed in NIC</li>
+                                    <li>Development in CIPA (Common Integrated Police Application), for upgradation as CIPRUS for state specific requirements. Technologies used are JAVA, Swings, JDBC and implemented under open source environment viz. Linux (OS), PostgreSQL (RDBMS).</li>
+                                    <li>Added code for new requirements</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Fixed bugs identified by support team and shared through Jira</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release.</li>
+                                    <li>The Common Integrated Police Application (CIPA) is a multilingual application to automate the processes (workflow) at primary sources of data itself e.g. Police Station and to build a crime & criminal Information system based on CrPC. It provides an efficient way of organizing crime records for generating queries/reports and crime analysis for decision support.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Software Developer - GreenApple -->
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h4 class="text-lg font-semibold text-gray-700">Software Developer</h4>
+                                <h5 class="text-blue-600 font-medium">Sept 2009 to Feb 2011</h5>
+                                <p class="text-gray-600 italic mb-2">GreenApple WebWare, New Delhi, India</p>
+                                <ul class="text-gray-700 space-y-1 list-disc list-inside text-sm">
+                                    <li>Development in Online Shopping Cart Application using java, JSP, Servlets, JDBC, Apache tomcat 5, HTML, CSS, jQuery, AJAX</li>
+                                    <li>Worked with team to guide for assigned task.</li>
+                                    <li>Fixed bugs identified by support team and shared through Jira</li>
+                                    <li>Worked with vendor and project management team on a code change and new fix in upcoming Release.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-2">Premendra Kumar</h3>
+            <p class="text-gray-300 mb-4">Thanks for going through my resume. I am eager to hear further from your end for any requirement/ suggestion.</p>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            <div class="text-gray-400 text-sm mt-4">
+                &copy; Copyright <strong>MyResume</strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div x-data="{ show: false }" 
+         x-init="
+            window.addEventListener('scroll', () => { 
+                show = window.scrollY > 100;
+            });
+         "
+         x-show="show"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 transform scale-90"
+         x-transition:enter-end="opacity-100 transform scale-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 transform scale-100"
+         x-transition:leave-end="opacity-0 transform scale-90"
+         style="display: none;">
+        <button @click="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </button>
+    </div>
+
+
+</body>
+</html>
+
